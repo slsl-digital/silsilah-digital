@@ -1,50 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=device-width, initial-scale=1">
- <title>Silsilah Digital</title>
- <style>
- :root {
- /*
- Tinggi banner Google Apps Script.
- Kalau banner masih kelihatan, naikkan ke 70px.
- Kalau bagian atas aplikasi kepotong, turunkan ke 58px.
- */
- --gas-banner-height: 0px;
- }
- html,
- body {
- margin: 0;
- width: 100%;
- height: 100%;
- overflow: hidden;
- background: #f4f7fd;
- }
- .app-wrapper {
- position: fixed;
- inset: 0;
- overflow: hidden;
- background: #f4f7fd;
- }
- .app-frame {
- position: absolute;
- left: 0;
- top: calc(-1 * var(--gas-banner-height));
- width: 100%;
- height: calc(100vh + var(--gas-banner-height));
- border: 0;
- display: block;
- }
- </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+  <title>Silsilah Digital</title>
+  <style>
+    :root {
+      /* Tinggi banner Apps Script (set 0px jika dideploy sebagai Anyone) */
+      --gas-banner-height: 0px;
+    }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      height: 100dvh; /* Dynamic Viewport Height presisi untuk HP */
+      overflow: hidden;
+      background: #f4f7fd;
+    }
+    .app-wrapper {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      background: #f4f7fd;
+    }
+    .app-frame {
+      position: absolute;
+      left: 0;
+      top: calc(-1 * var(--gas-banner-height));
+      width: 100%;
+      height: 100%; /* Mengikuti tinggi wrapper yang presisi */
+      height: calc(100dvh + var(--gas-banner-height));
+      border: 0;
+      display: block;
+    }
+  </style>
 </head>
 <body>
- <div class="app-wrapper">
- <iframe
- class="app-frame"
- src="https://script.google.com/macros/s/AKfycbyRQPTRtW5mnBgqpraxm2l9gbg-YclXA-l-Xl2J1iyGkcUG1PoMfeZFOMTa7AVxY2UesA/exec"
- allowfullscreen>
- </iframe>
- </div>
+  <div class="app-wrapper">
+    <iframe class="app-frame" src="https://script.google.com/macros/s/AKfycbzVskexWN7HJFISDZMWA6Uss_hP0x1bzCPzhcLGcL1uFuB2EE6DImpj8NTTAmRh4SoPmw/exec" allowfullscreen=""></iframe>
+  </div>
 </body>
 </html>
